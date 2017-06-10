@@ -2,7 +2,8 @@ language: java
 jdk:
   - oraclejdk7
   - openjdk7
-sudo: true
+sudo: required
+dist: precise
 
 addons:
   hostname: short-hostname

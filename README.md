@@ -3,22 +3,10 @@
 
 This is **UNOFFICIAL**, fork from [openmuc](https://www.openmuc.org/asn1/).
 
-jASN1 can be used for ASN.1 BER encoding/decoding using Java. It consists of two projects: jasn1-compiler (licensed under GPLv3) and the jasn1 library (licensed under LGPLv2.1). The jasn1-compiler is an application that creates Java classes from ASN.1 syntax. These generated classes can then be used together with the jasn1 library to efficiently encode and decode messages using the Basic Encoding Rules(BER).
+jASN1 is an LGPL licensed Java ASN.1 BER and DER encoding/decoding library. It consists of a compiler (jasn-compiler) that creates Java classes from ASN.1 syntax. Compilation of multiple inter-dependent ASN.1 modules defined in multiple files is supported. The generated classes can then be used together with the jASN1 library to efficiently encode and decode messages using the Basic Encoding Rules (BER). The encoded bytes also confirm to the Distinguished Encoding Rules (DER) which is a subset of BER.
 
-**The software has been tested under Linux and Windows.**
+Much effort has been made to make encoding and decoding BER messages using this library very efficient. Benchmarks suggest that it is faster than the Binary Notes Framework by factors of 3 and 6 for encoding and decoding respectively. Similarly it was found to be faster than JAC by factors of 8 and 4 for encoding and decoding.
 
-### Dependency of the jasn1-compiler:
+jASN.1 was chosen by the European Space Agency & Telespazio VEGA as their open source ASN.1 Java tool of choice.
 
-[ANTLR](http://www.antlr.org) License: The BSD License, Copyright (c) 2012 Terence Parr and Sam Harwell All rights reserved.
-
-The jasn1-compiler uses ANTLR to parse the ASN.1 definitions. The excellent grammar to generate the ANTLR parser was taken from the [BinaryNotes ASN.1 Framework](http://bnotes.sourceforge.net/) (licensed under the Apache 2.0
-  license).  Copyright 2006-2011 [Abdulla Abdurakhmanov](abdulla@latestbit.com)
-
-### Example:
-For an example on how to use jASN1 see the sample folder.
-
-### Notes about the ASN1 syntax:
-In some cases it could be favorable not to decode elements of type ANY because it would involve big array copying. Therefor the compiler supports the alternative element type called ANY_NODECODE which can be used inside the ASN.1 file in order to generate Java code that will not decode nor encode elements of these types.
-
-### ASN.1 and BER standards:
-The Abstract Syntax Notation One (ASN.1) is defined in the ITU-T Standard X.680. The Basic Encoding Rules (BER) are specified in the ITU-T Standard X.690.
+Developer: Stefan Feuerhahn
