@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -20,14 +20,13 @@
  */
 package org.openmuc.jasn1.compiler.model;
 
-public class AsnAnyNoDecode extends AsnUniversalType {
-    final String BUILTINTYPE = "ANY_NODECODE";
-    public String definedByType;
-    public boolean isDefinedBy;
+import java.util.ArrayList;
+import java.util.List;
 
-    public AsnAnyNoDecode() {
-        isDefinedBy = false;
-        definedByType = "";
-    }
+public class AsnInformationObjectClass {
+
+    public String name = "";
+    public List<AsnElementType> elementList = new ArrayList<>();
+    public List<String> syntaxTokens = new ArrayList<>();
 
 }

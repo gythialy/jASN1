@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -20,7 +20,13 @@
  */
 package org.openmuc.jasn1.compiler.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AsnConstraint {
+
+    public List<String> tokens = new ArrayList();
+
     public ElementSetSpec addElemSetSpec;
     public AsnDefinedValue definedValue;
     public ElementSetSpec elemSetSpec;

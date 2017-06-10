@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -39,27 +39,25 @@ public class BerByteArrayOutputStream extends OutputStream {
      *            the size of the underlying buffer
      */
     public BerByteArrayOutputStream(int bufferSize) {
-        if (bufferSize <= 0) {
-            throw new IllegalArgumentException("bufferSize may not be <= 0");
-        }
-        buffer = new byte[bufferSize];
-        index = bufferSize - 1;
-        automaticResize = false;
+        this(new byte[bufferSize], bufferSize - 1, false);
     }
 
     public BerByteArrayOutputStream(int bufferSize, boolean automaticResize) {
-        buffer = new byte[bufferSize];
-        index = bufferSize - 1;
-        this.automaticResize = automaticResize;
+        this(new byte[bufferSize], bufferSize - 1, automaticResize);
+    }
+
+    public BerByteArrayOutputStream(byte[] buffer) {
+        this(buffer, buffer.length - 1, false);
     }
 
     public BerByteArrayOutputStream(byte[] buffer, int startingIndex) {
-        this.buffer = buffer;
-        index = startingIndex;
-        automaticResize = false;
+        this(buffer, startingIndex, false);
     }
 
     public BerByteArrayOutputStream(byte[] buffer, int startingIndex, boolean automaticResize) {
+        if (buffer.length <= 0) {
+            throw new IllegalArgumentException("buffer size may not be <= 0");
+        }
         this.buffer = buffer;
         index = startingIndex;
         this.automaticResize = automaticResize;

@@ -18,38 +18,10 @@
  * along with jASN1.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.jasn1.ber.types;
+package org.openmuc.jasn1.compiler.model;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.openmuc.jasn1.ber.BerByteArrayOutputStream;
-
-public class BerAnyNoDecode {
-
-    public int length;
-
-    public BerAnyNoDecode() {
-    }
-
-    public BerAnyNoDecode(byte[] value) {
-        length = value.length;
-    }
-
-    public BerAnyNoDecode(int length) {
-        this.length = length;
-    }
-
-    public int encode(BerByteArrayOutputStream os) throws IOException {
-        return length;
-    }
-
-    public int decode(InputStream is, int length) throws IOException {
-        return length;
-    }
-
-    @Override
-    public String toString() {
-        return "ANY not decoded";
-    }
+public class AsnValueAssignment {
+    public AsnValue value;
+    public Object type;
+    public String name;
 }

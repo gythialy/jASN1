@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -22,15 +22,7 @@ package org.openmuc.jasn1.compiler.model;
 
 public class AsnDefinedType extends AsnType {
     public AsnConstraint constraint;
-    public boolean isModuleReference;
-    public String moduleReference;
-
-    public String typeName;
-
-    public AsnDefinedType() {
-        moduleReference = "";
-        typeName = "";
-        isModuleReference = false;
-    }
-
+    public String moduleOrObjectClassReference = "";
+    public boolean isObjectClassField = false;
+    public String typeName = "";
 }

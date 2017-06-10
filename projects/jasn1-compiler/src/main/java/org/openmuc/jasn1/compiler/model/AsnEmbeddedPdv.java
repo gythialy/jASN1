@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -20,7 +20,7 @@
  */
 package org.openmuc.jasn1.compiler.model;
 
-public class AsnEmbedded extends AsnType {
+public class AsnEmbeddedPdv extends AsnUniversalType {
     final String BUILTINTYPE = "EMBEDDED PDV";
 
 }

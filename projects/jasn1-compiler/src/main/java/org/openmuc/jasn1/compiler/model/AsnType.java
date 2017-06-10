@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-15 Fraunhofer ISE
+ * Copyright 2011-17 Fraunhofer ISE
  *
  * This file is part of jASN1.
  * For more information visit http://www.openmuc.org
@@ -20,8 +20,11 @@
  */
 package org.openmuc.jasn1.compiler.model;
 
+import java.util.List;
+
 public abstract class AsnType {
 
     public String name = "";
+    public List<AsnParameter> parameters = null;
 
 }
